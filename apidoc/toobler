@@ -1,0 +1,161 @@
+user registration
+
+url: http://localhost/fathim/public/user
+method :post
+
+request
+
+{
+    "name":"sharan",
+    "email":"sharannair@gmail.com",
+    "department":"it",
+    "password":"123"
+ 
+}
+
+response
+
+{
+    "info": {
+        "status": "success",
+        "message": "User created",
+        "apiVersion": "1.18.0.0"
+    },
+    "data": [
+        {
+            "userId": "1"
+        }
+    ]
+}
+
+
+user login
+method:post
+
+url:http://localhost/fathim/public/login
+
+request
+{
+   
+    "email":"harith@gmail.com",
+    "password":"123"
+    
+ 
+}
+
+response
+
+{
+    "info": {
+        "status": "success",
+        "message": "User logged in successfully ",
+        "apiVersion": "1.18.0.0"
+    },
+    "data": [
+        {
+            "logId": "1"
+        }
+    ]
+}
+
+
+user logout
+
+method:put
+
+url:http://localhost/fathim/public/login/1----->id here passed is logId that while logging in
+
+response
+
+{
+    "info": {
+        "status": "success",
+        "message": "User logged out Successfully ",
+        "apiVersion": "1.18.0.0"
+    }
+}
+
+
+Message creation
+
+url: http://localhost/fathim/public/message
+method:post
+
+request
+
+{
+   
+    "userId":"1",
+    "message":"hi how are you"
+    
+ 
+}
+
+response
+
+{
+    "info": {
+        "status": "success",
+        "message": "Message created Successfully",
+        "apiVersion": "1.18.0.0"
+    },
+    "data": [
+        {
+            "messageId": "3"
+        }
+    ]
+}
+
+message update
+
+url:http://localhost/fathim/public/message/3----->id passed here is the message id
+
+request
+{
+
+    "message":"hey watsup"
+    
+ 
+}
+
+
+response
+
+{
+    "info": {
+        "status": "success",
+        "message": "Message Updated Successfully ",
+        "apiVersion": "1.18.0.0"
+    }
+}
+
+
+get
+url:http://localhost/fathim/public/message
+
+method :get
+
+{
+    "info": {
+        "status": "success",
+        "message": "Message Information",
+        "items_per_page": 25,
+        "page_count": 1,
+        "current_page": 1,
+        "apiVersion": "1.18.0.0"
+    },
+    "data": [
+        {
+            "messageId": "1",
+            "userId": "1",
+            "message": "hi how are you",
+            "created": "2022-06-15 00:00:00",
+            "name": "sharan",
+            "department": "it"
+        }
+    ]
+}
+
+message delete
+url:url:http://localhost/fathim/public/message/1---->id passed here is the message id
+
